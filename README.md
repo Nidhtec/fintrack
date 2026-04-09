@@ -1,27 +1,47 @@
 # 💰 FinTrack — Personal Finance Dashboard
 
-A full-stack personal finance tracker built with the **PERN Stack** (PostgreSQL, Express, React, Node.js).
+A full-stack personal finance tracker built with the **PERN Stack** (PostgreSQL, Express, React, Node.js). Track your income and expenses with a beautiful real-time dashboard.
 
-![Stack](https://img.shields.io/badge/Stack-PERN-6366f1?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+## 🔗 Live Demo
+👉 **[https://fintrack-bay-eight.vercel.app](https://fintrack-bay-eight.vercel.app)**
 
 ---
 
 ## ✨ Features
-- 🔐 JWT Authentication (Register & Login)
+- 🔐 JWT Authentication — Secure Register & Login
 - 💸 Add / Delete Income & Expenses
-- 📊 Live Doughnut Chart (Income vs Expenses)
-- 💰 Real-time Balance Summary
-- 🔒 Protected Routes
+- 📊 Live Doughnut Chart — Income vs Expenses
+- 💰 Real-time Balance, Income & Expense Summary
+- 🔒 Protected Routes — Dashboard only accessible after login
+- 📱 Clean Responsive UI
+
+---
 
 ## 🛠️ Tech Stack
+
 | Frontend | Backend |
 |---|---|
-| React, Vite | Node.js, Express |
-| Axios, Chart.js | PostgreSQL, JWT |
-| React Router DOM | bcryptjs, dotenv |
+| React, Vite | Node.js, Express.js |
+| React Router DOM | PostgreSQL |
+| Axios | JWT Authentication |
+| Chart.js | bcryptjs |
+| Context API | dotenv, cors |
 
-## ⚙️ Setup
+---
+
+## 🔌 API Endpoints
+
+| Method | Endpoint | Description | Auth |
+|---|---|---|---|
+| POST | `/api/auth/register` | Register new user | ❌ |
+| POST | `/api/auth/login` | Login user | ❌ |
+| GET | `/api/transactions` | Get all transactions | ✅ |
+| POST | `/api/transactions` | Add transaction | ✅ |
+| DELETE | `/api/transactions/:id` | Delete transaction | ✅ |
+
+---
+
+## ⚙️ Run Locally
 
 **1. Clone the repo**
 ```bash
@@ -44,11 +64,10 @@ CREATE TABLE transactions (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES use
 ```bash
 cd server
 npm install
-# create .env file
 npm run dev
 ```
 
-**.env**
+Create `.env` in server folder:
 ```
 DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/fintrack
 JWT_SECRET=fintrack_super_secret_key_2024
@@ -63,5 +82,10 @@ npm run dev
 
 > App runs on `http://localhost:5173`
 
+---
+
 ## 🙋‍♂️ Author
-**Nidhi Vishwakarma** — [GitHub](https://github.com/Nidhtec) | [LinkedIn](https://www.linkedin.com/in/vnidhi1)
+**Nidhi Vishwakarma**
+- 🐙 GitHub: [Nidhtec](https://github.com/Nidhtec)
+- 💼 LinkedIn: [vnidhi1](https://www.linkedin.com/in/vnidhi1)
+
